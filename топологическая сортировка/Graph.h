@@ -7,6 +7,8 @@
 using namespace std;
 
 class Graph {
+	vector<pair<int, vector<int>>> vertices;
+	int size;
 public:
 	Graph();
 	Graph(int size);
@@ -15,7 +17,4 @@ public:
 	bool hasCycle();
 	void topological_sort();
 	void print();
-
-	vector<pair<int, vector<int>>> vertices;
-	int size;
 };

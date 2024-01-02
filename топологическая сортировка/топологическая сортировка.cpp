@@ -2,11 +2,12 @@
 
 int main() {
 	Graph graph;
-	graph.addNode(142, {2, 3, 4});
-	graph.addNode(1, { 2, 3, 4 });
+	graph.addNode(1, {4});
+	graph.addNode(4, { 2, 3 });
+	graph.addNode(3, { 2});
 	graph.addNode(2);
-	graph.addNode(2, { 3, 4, 1 });
+
+	cout << graph.hasCycle() << endl;
 
 	graph.print();
-
 }

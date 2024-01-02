@@ -6,10 +6,14 @@ void Graph::addNode(int mainNode, vector<int> neighborNodes){
 	sort(neighborNodes.begin(), neighborNodes.end());
 
 	pair<int, vector<int>> elem = make_pair(mainNode, neighborNodes);
-	if (find(vertices.begin(), vertices.end(), elem) == vertices.end()) {
-		vertices.push_back(elem);
-		size++;
-	}
+
+	for  (auto& search : vertices)
+		if (search.first == elem.first)
+			return;
+
+	vertices.push_back(elem);
+	size++;
+	sort(vertices.begin(), vertices.end());
 }
 
 void Graph::addNode(int mainNode){
@@ -29,6 +33,8 @@ void Graph::print(){
 }
 
 bool Graph::hasCycle(){
+
+
 	return false;
 }
 
